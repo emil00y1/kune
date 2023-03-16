@@ -1,8 +1,19 @@
 * {
   box-sizing: border-box;
+  padding: 0;
+  margin: 0;
 }
 body {
   background-image: url(/img/bg.jpg);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+main img {
+  width: 100%;
+  display: block;
+  align-self: stretch;
+  object-fit: cover;
 }
 
 @font-face {
@@ -31,5 +42,4 @@ h1 {
 
 p {
   font-family: "Montserrat", sans-serif;
-  color: white;
 }
