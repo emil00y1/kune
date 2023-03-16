@@ -15,3 +15,8 @@ h1 {
   font-kerning: none;
   color: white;
 }
+
+p {
+  font-family: "Montserrat", sans-serif;
+  color: white;
+}
