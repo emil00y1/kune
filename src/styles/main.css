@@ -10,10 +10,22 @@ body {
   src: url(/fonts/dance.woff2);
 }
 
+/* Colors */
+
+:root {
+  --primary: #f8e6dc;
+  --orange: #e57144;
+  --purple: #8760d4;
+  --pink: #df729f;
+  --darkred: #2e0a0c;
+}
+
 h1 {
   font-family: Dance;
   font-kerning: none;
-  color: white;
+  color: var(--primary);
+  font-size: 96px;
+  text-shadow: 8px 4px 0px #d96c45;
 }
 
 p {
