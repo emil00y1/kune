@@ -1,0 +1,9 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  background-image: url(../public/img/bg.jpg);
+}
+
+h1 {
+}
