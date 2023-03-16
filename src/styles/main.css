@@ -26,6 +26,7 @@ h1 {
   color: var(--primary);
   font-size: 96px;
   text-shadow: 8px 4px 0px #d96c45;
+  text-align: center;
 }
 
 p {
