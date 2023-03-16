@@ -2,14 +2,16 @@
   box-sizing: border-box;
 }
 body {
-  background-image: url(../public/img/bg.jpg);
+  background-image: url(/img/bg.jpg);
 }
 
 @font-face {
   font-family: Dance;
-  src: url(../public/fonts/dance.woff2);
+  src: url(/fonts/dance.woff2);
 }
 
 h1 {
   font-family: Dance;
+  font-kerning: none;
+  color: white;
 }
