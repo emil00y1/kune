@@ -5,5 +5,11 @@ body {
   background-image: url(../public/img/bg.jpg);
 }
 
+@font-face {
+  font-family: Dance;
+  src: url(../public/fonts/dance.woff2);
+}
+
 h1 {
+  font-family: Dance;
 }
