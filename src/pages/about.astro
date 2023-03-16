@@ -1,0 +1,102 @@
+---
+import Main from "../layouts/Main.astro";
+---
+
+<Main title="ABOUT US">
+  <section class="text_content">
+    <article>
+      <h2>The festival</h2>
+      <p>
+        Being at KUNE Festival is an immersive experience that blends art,
+        music, and the island’s natural beauty. The location’s secludedness adds
+        to the sense of separation from everyday life. At the same time, the art
+        invites us to engage in open discussions and imagine a world that can be
+        different, making a positive impact over our mentality and worldview. <br
+        />
+        <br /> In conjunction with the art, the music creates a holistic cultural
+        experience representative of the modern, young Nordic artistic community.
+      </p>
+    </article>
+    <article>
+      <h2>The location</h2>
+      <p>
+        The island is a decommissioned defense fort built in the 19th century. A
+        unique landmark with historical value, the fort-island was recently
+        renovated and repurposed into a place dedicated to young people and
+        innovative cultural initiatives. It can host 2500 people, 1000 of which
+        could be accommodated in the camping area. <br />
+        <br /> This unique location provides a striking contrast between its historical
+        purpose of aggression and its current function as a hub for a cultural celebration.
+      </p>
+    </article>
+  </section>
+  <section class="gallery">
+    <div><img src="img/0005.webp" alt="people doing yoga" /></div>
+    <div><img src="img/4364.webp" alt="people dancing close to stage" /></div>
+    <div><img src="img/2698.webp" alt="sunset" /></div>
+    <div class="arrows">
+      <img src="img/chevron_left.svg" alt="left arrow" />
+      <img src="img/chevron_right.svg" alt="right arrow" />
+    </div>
+  </section>
+  <section class="text_content">
+    <article>
+      <h2>The founders</h2>
+      <p>
+        On the more practical side of things, KUNE Festival is an NGO made up of
+        over 30 passionate and dedicated individuals who work voluntarily
+        year-round to create this extraordinary experience. <br /><br />Our team
+        is comprised of artists, musicians, designers, writers, project
+        managers, and cultural enthusiasts, all united by our shared vision and
+        values.<br /><br /> We are motivated by the belief that art and culture have
+        the power to create positive change in the world, and we are committed to
+        working towards this goal by creating a unique platform that celebrates the
+        Nordic underground talent.
+      </p>
+    </article>
+    <article>
+      <img src="img/2214.webp" alt="picture of founders" />
+    </article>
+  </section>
+</Main>
+
+<style>
+  .text_content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background: var(--primary);
+    gap: 4rem;
+    padding: 5rem;
+  }
+
+  h2 {
+    font-kerning: none;
+    font-size: 64px;
+  }
+
+  p {
+    margin-top: 4rem;
+    font-size: 22px;
+    line-height: 30px;
+  }
+
+  .text_content article {
+    max-width: 800px;
+  }
+
+  .text_content img {
+    max-width: 600px;
+  }
+
+  .gallery {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    padding: 2rem;
+  }
+
+  .gallery img {
+    aspect-ratio: 1/1;
+    max-width: 600px;
+  }
+</style>
