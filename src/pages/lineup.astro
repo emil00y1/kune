@@ -15,10 +15,15 @@ import Main from "../layouts/Main.astro";
 </Main>
 
 <style>
+  @media (min-width: 800px) {
+    div {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 60px;
+    }
+  }
+
   div {
     padding: 0 55px;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 60px;
   }
 </style>
