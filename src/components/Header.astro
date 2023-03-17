@@ -32,6 +32,9 @@
     font-size: 65px;
     text-shadow: 8px 4px 0px #d96c45;
   }
+  li {
+    margin: 18px;
+  }
 
   a:hover {
     color: var(--purple);
@@ -41,6 +44,8 @@
     text-align: center;
     justify-content: space-between;
     padding: 30px;
+    position: sticky;
+    top: 0;
   }
 
   img {
@@ -62,15 +67,14 @@
   .navmenu {
     position: fixed;
     right: -100%;
-    top: 70px;
+    top: 120px;
     gap: 0;
     flex-direction: column;
-    background-image: url(/img/bg.webp);
-    border-color: #170f02;
-    border-width: 2px;
+
     width: 100%;
     text-align: center;
     transition: 0.3s;
+    z-index: 3;
   }
 
   .navitem {
@@ -79,10 +83,6 @@
 
   .navmenu.active {
     right: 0;
-  }
-
-  .displaynone {
-    display: none;
   }
 
   .bar {
@@ -103,16 +103,19 @@
 <script>
   const hamburger = document.querySelector(".hamburger");
   const navMenu = document.querySelector(".navmenu");
+  const main = document.querySelector("main");
 
   hamburger.addEventListener("click", () => {
     hamburger.classList.toggle("active");
     navMenu.classList.toggle("active");
+    main.classList.toggle("hide");
   });
 
   document.querySelectorAll(".navlink").forEach((n) =>
     n.addEventListener("click", () => {
       hamburger.classList.remove("active");
       navMenu.classList.remove("active");
+      main.classList.remove("hide");
     })
   );
 </script>

@@ -50,3 +50,15 @@ p {
 h2 {
   font-family: "Dance", sans-serif;
 }
+
+main {
+  left: 0;
+  position: relative;
+  transition: all 0.3s ease-in-out;
+  z-index: -1;
+}
+
+main.hide {
+  left: -100%;
+  transition: all 0.3s ease-in-out;
+}
