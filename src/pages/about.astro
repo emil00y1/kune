@@ -32,19 +32,35 @@ import Footer from "../components/Footer.astro";
     </article>
   </section>
   <section class="gallery">
-    <div><img src="img/gallery/0005.webp" alt="people doing yoga" /></div>
-    <div>
-      <img src="img/gallery/4364.webp" alt="people dancing close to stage" />
+    <div class="slider">
+      <div class="slide">
+        <img src="img/gallery/0005.webp" alt="people doing yoga" />
+      </div>
+      <div class="slide">
+        <img src="img/gallery/4364.webp" alt="people dancing close to stage" />
+      </div>
+      <div class="slide">
+        <img src="img/gallery/2698.webp" alt="sunset" />
+      </div>
+      <div class="slide">
+        <img src="img/gallery/33.webp" alt="gallery picture" />
+      </div>
+      <div class="slide">
+        <img src="img/gallery/0466.webp" alt="gallery picture" />
+      </div>
+      <div class="slide">
+        <img src="img/gallery/1575.webp" alt="gallery picture" />
+      </div>
+      <div class="slide">
+        <img src="img/gallery/3458.webp" alt="gallery picture" />
+      </div>
+      <div class="slide">
+        <img src="img/gallery/2868.webp" alt="gallery picture" />
+      </div>
     </div>
-    <div><img src="img/gallery/2698.webp" alt="sunset" /></div>
-    <div><img src="img/gallery/33.webp" alt="gallery picture" /></div>
-    <div><img src="img/gallery/0466.webp" alt="gallery picture" /></div>
-    <div><img src="img/gallery/1575.webp" alt="gallery picture" /></div>
-    <div><img src="img/gallery/3458.webp" alt="gallery picture" /></div>
-    <div><img src="img/gallery/2868.webp" alt="gallery picture" /></div>
     <div class="arrows">
-      <img src="img/chevron_left.svg" alt="left arrow" />
-      <img src="img/chevron_right.svg" alt="right arrow" />
+      <img src="img/chevron_left_cream.svg" alt="left arrow" id="prev" />
+      <img src="img/chevron_right_cream.svg" alt="right arrow" id="next" />
     </div>
   </section>
   <section class="text_content">
@@ -66,16 +82,17 @@ import Footer from "../components/Footer.astro";
       <img src="img/2214.webp" alt="picture of founders" />
     </article>
   </section>
-  <Footer></Footer>
 </Main>
 
 <style>
-  .text_content {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    background: var(--primary);
-    gap: 4rem;
-    padding: 5rem;
+  @media (min-width: 800px) {
+    .text_content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      background: var(--primary);
+      gap: 4rem;
+      padding: 5rem;
+    }
   }
 
   h2 {
@@ -100,12 +117,117 @@ import Footer from "../components/Footer.astro";
   .gallery {
     display: flex;
     justify-content: center;
+    align-items: center;
+    position: relative;
     gap: 2rem;
     padding: 2rem;
   }
 
-  .gallery img {
+  .slide img {
     aspect-ratio: 1/1;
     max-width: 600px;
   }
+
+  .slider {
+    display: flex;
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    gap: 1rem;
+    width: 100%;
+    max-width: 1950px;
+    margin: 0 auto;
+  }
+  .slider::-webkit-scrollbar {
+    display: none;
+  }
+  .slide {
+    flex-shrink: 0;
+    width: calc(100% / 3);
+    scroll-snap-align: center;
+  }
+
+  .slide:last-of-type {
+    margin-right: 0;
+  }
+
+  .arrows {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    gap: 90vw;
+  }
+
+  .arrows img {
+    width: 17px;
+    cursor: pointer;
+  }
+
+  @media (max-width: 800px) {
+    .slide {
+      width: calc(100% / 1);
+    }
+
+    .arrows {
+      display: none;
+    }
+    h2 {
+      font-size: 42px;
+    }
+    .text_content {
+      background-color: var(--primary);
+      padding: 2rem;
+    }
+    p {
+      margin-top: 1.5rem;
+      margin-bottom: 3rem;
+    }
+    article {
+      margin-top: 1rem;
+    }
+    p {
+      font-size: 18px;
+    }
+  }
 </style>
+
+<script>
+  const slider = document.querySelector(".slider");
+  const slides = document.querySelectorAll(".slide");
+  const prevBtn = document.querySelector("#prev");
+  const nextBtn = document.querySelector("#next");
+  const sliderWidth = slider.clientWidth;
+  const slideWidth = sliderWidth / 3;
+  let currentIndex = 0;
+
+  function showSlide(index) {
+    slider.scrollTo({
+      left: index * slideWidth,
+      behavior: "smooth",
+    });
+  }
+
+  function handlePrevClick() {
+    if (currentIndex > 0) {
+      currentIndex--;
+      showSlide(currentIndex);
+    }
+  }
+
+  function handleNextClick() {
+    if (currentIndex < slides.length - 1) {
+      currentIndex++;
+      showSlide(currentIndex);
+    }
+  }
+
+  prevBtn.addEventListener("mousedown", handlePrevClick);
+  nextBtn.addEventListener("mousedown", handleNextClick);
+
+  showSlide(currentIndex);
+</script>

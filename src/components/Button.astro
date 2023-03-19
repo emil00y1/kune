@@ -1,0 +1,102 @@
+---
+const { text, type, href } = Astro.props;
+---
+
+<a class={type} href={href}>{text}</a>
+
+<style>
+  a {
+    font-family: Montserrat;
+    font-weight: 500;
+    text-decoration: none;
+  }
+
+  /* darkred button */
+  .darkred {
+    background: var(--darkred);
+    width: 208px;
+    border-radius: 35px;
+    height: 58px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--primary);
+    font-size: 26px;
+    font-weight: 500;
+  }
+
+  /* creamred button */
+  .creamred {
+    background: var(--primary);
+    width: 208px;
+    border: 2px solid var(--darkred);
+    border-radius: 35px;
+    height: 58px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--darkred);
+    font-size: 26px;
+    font-weight: 500;
+  }
+
+  /* purple button */
+  .purple {
+    background: var(--purple);
+    width: 208px;
+    border-radius: 35px;
+    height: 58px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--primary);
+    font-size: 26px;
+    font-weight: 500;
+    text-transform: uppercase;
+  }
+
+  /* transparent button */
+  .transparent {
+    width: 208px;
+    border-radius: 35px;
+    border: 2px solid var(--primary);
+    height: 58px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--primary);
+    font-size: 26px;
+    font-weight: 500;
+  }
+
+  /* creampurple button */
+  .creampurple {
+    background: var(--primary);
+    width: 208px;
+    border-radius: 35px;
+    border: 2px solid var(--purple);
+    height: 58px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--purple);
+    font-size: 26px;
+    font-weight: 500;
+    text-transform: uppercase;
+  }
+
+  /* footer subscribe button */
+  .subscribe {
+    background: var(--purple);
+    width: 150px;
+    border-radius: 35px;
+    height: 53px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    color: var(--primary);
+    font-size: 18px;
+    font-weight: 500;
+  }
+</style>
