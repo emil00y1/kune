@@ -3,8 +3,11 @@ import Button from "../components/Button.astro";
 import Card from "../components/Card.astro";
 import Main from "../layouts/Main.astro";
 
+// const urlParams = new URLSearchParams(window.location.search);
+// const day = urlParams.get("day");
+
 const data = await fetch(
-  "https://mjaccmeonfywsevhklts.supabase.co/rest/v1/kunedata",
+  "https://mjaccmeonfywsevhklts.supabase.co/rest/v1/kunedata?image=neq.NULL&day=eq.Thursday&select=artistname,day,location,image",
   {
     method: "GET",
     headers: {
