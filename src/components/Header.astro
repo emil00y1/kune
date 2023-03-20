@@ -22,6 +22,7 @@
 <style>
   ul {
     list-style: none;
+    z-index: 1;
   }
 
   a {
@@ -99,17 +100,48 @@
     padding: 0 24px;
     border-radius: 10px;
   }
+
+  @media (max-width: 450px) {
+    header {
+      background-color: var(--primary);
+      padding: 15px 20px 5px;
+      position: fixed;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      top: auto;
+      border-top: 3px #d96c45 solid;
+    }
+    .bar {
+      background-color: #d96c45;
+      width: 10px;
+      height: 3px;
+      margin: 15px auto;
+    }
+    img {
+      width: 60px;
+      padding-top: 5px;
+    }
+    .navmenu {
+      top: 8%;
+    }
+    a {
+      font-size: 46px;
+    }
+  }
 </style>
 
 <script>
   const hamburger = document.querySelector(".hamburger");
   const navMenu = document.querySelector(".navmenu");
   const main = document.querySelector("main");
+  const footer = document.querySelector("footer");
 
   hamburger.addEventListener("click", () => {
     hamburger.classList.toggle("active");
     navMenu.classList.toggle("active");
     main.classList.toggle("hide");
+    footer.classList.toggle("hide");
   });
 
   document.querySelectorAll(".navlink").forEach((n) =>
@@ -117,6 +149,7 @@
       hamburger.classList.remove("active");
       navMenu.classList.remove("active");
       main.classList.remove("hide");
+      footer.classList.remove("hide");
     })
   );
 </script>

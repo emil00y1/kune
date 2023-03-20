@@ -3,38 +3,37 @@ import Button from "./Button.astro";
 ---
 
 <footer>
-  <div class="grid1-1">
-    <div>
-      <h2>Contact</h2>
-      <p>email@kune.dk</p>
-      <p>+45 11 22 33 44</p>
-      <p>someplace in CPH</p>
-      <p>&copy; KUNE 2023</p>
-    </div>
-    <div class="emailsub">
-      <p class="newsletter">Subscribe to our newsletter</p>
-      <input
-        class="input1"
-        type="email"
-        id="email"
-        name="email"
-        placeholder="E-mail"
-      />
-      <Button type="subscribe" text="Subscribe" />
-    </div>
+  <div>
+    <h2>Contact</h2>
+    <p>email@kune.dk</p>
+    <p>+45 11 22 33 44</p>
+    <p>someplace in CPH</p>
+    <p>&copy; KUNE 2023</p>
+  </div>
+  <div class="emailsub">
+    <p class="newsletter">Subscribe to our newsletter</p>
+    <input class="input1" type="email" id="email" name="email" placeholder="E-mail" />
+    <Button type="subscribe" text="Subscribe" />
   </div>
 </footer>
 
 <style>
+  footer.hide {
+    left: -100%;
+    transition: all 0.3s ease-in-out;
+    position: relative;
+  }
   footer {
+    display: flex;
+    justify-content: space-between;
+    color: #f8e6dc;
     padding: 2rem;
-    background-image: url(img/bg.jpg);
   }
   h2 {
-    padding: 1.5%;
+    padding: 15px;
   }
   p {
-    padding: 1.5%;
+    padding: 10px;
   }
 
   .input2 {
@@ -53,13 +52,13 @@ import Button from "./Button.astro";
     border-radius: 16px;
   }
 
-  .grid1-1 {
-    display: grid;
-    color: #f8e6dc;
-    grid-template-columns: 1fr 1fr;
-  }
   .emailsub {
+    display: grid;
+    gap: 20px;
     grid-template-rows: 1fr 1fr 1fr 1fr;
-    float: right;
+  }
+
+  .newsletter {
+    font-weight: 700;
   }
 </style>
