@@ -1,19 +1,20 @@
 ---
+import Button from "../components/Button.astro";
 import Main from "../layouts/Main.astro";
 ---
 
-<Main id="frontpage" title="KUNE FESTIVAL">
-  <section class="landing"></section>
+<Main id="frontpage" title="KUNE FESTIVAL" type="landing">
+  <div slot="after-heading">
+    <Button type="darkred" text="Get Tickets" href="#" />
+    <Button type="creamred" text="View Lineup" href="lineup" />
+  </div>
+
   <section class="text_content">
     <article>
       <h2>19-23 July ungdoms0en</h2>
       <p>
-        A 5-day electronic music festival that takes place on an island 30
-        minutes away from Copenhagen. A one-of-its-kind celebration of the
-        Scandinavian underground culture. A playground with five stages, two art
-        galleries, and multiple art installations. An intimate, holistic
-        experience with access to a camping ground, food area, dipping spot, and
-        unique sunsets. A true hidden gem.
+        A 5-day electronic music festival that takes place on an island 30 minutes away from Copenhagen. A one-of-its-kind celebration of the Scandinavian underground culture. A playground with five
+        stages, two art galleries, and multiple art installations. An intimate, holistic experience with access to a camping ground, food area, dipping spot, and unique sunsets. A true hidden gem.
       </p>
     </article>
     <article>
@@ -23,13 +24,6 @@ import Main from "../layouts/Main.astro";
 </Main>
 
 <style>
-  .landing {
-    background-image: url(img/lp.png);
-    background-size: cover;
-    background-position: center center;
-    padding: 10%;
-  }
-
   @media (min-width: 800px) {
     .text_content {
       display: grid;
@@ -56,6 +50,12 @@ import Main from "../layouts/Main.astro";
 
   article {
     padding: 2rem;
+  }
+
+  div {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
   }
 
   @media (max-width: 800px) {

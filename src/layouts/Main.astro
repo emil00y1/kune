@@ -2,7 +2,7 @@
 import Footer from "../components/Footer.astro";
 import Header from "../components/Header.astro";
 import "../styles/main.css";
-const { title, id } = Astro.props;
+const { title, id, type } = Astro.props;
 ---
 
 <html lang="en">
@@ -13,21 +13,34 @@ const { title, id } = Astro.props;
     <meta name="generator" content={Astro.generator} />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet" />
     <title>{title}</title>
   </head>
 
   <body>
     <Header />
     <main>
-      <h1 id={id}>{title}</h1>
+      <section class={type}>
+        <h1 id={id}>{title}</h1>
+        <slot name="after-heading" />
+      </section>
       <slot />
     </main>
     <Footer />
   </body>
 
-  <style></style>
+  <style>
+    .landing {
+      background-image: url(img/lp.webp);
+      background-repeat: no-repeat;
+      background-position: top center;
+      background-size: cover;
+      padding: 10% 0;
+      margin-top: 0;
+    }
+    .landing h1 {
+      margin-top: 20%;
+      color: black;
+    }
+  </style>
 </html>
