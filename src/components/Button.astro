@@ -100,4 +100,21 @@ const { text, type, href } = Astro.props;
     font-size: 18px;
     font-weight: 500;
   }
+
+  @media (max-width: 550px) {
+    .subscribe {
+      background-color: transparent;
+      width: 150px;
+      border-radius: 35px;
+      border: 2px solid var(--primary);
+      height: 53px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      color: var(--primary);
+      font-size: 18px;
+      font-weight: 500;
+    }
+  }
 </style>

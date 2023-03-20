@@ -3,17 +3,17 @@ import Button from "./Button.astro";
 ---
 
 <footer>
+  <div class="emailsub">
+    <h3 class="newsletter">Subscribe to our newsletter</h3>
+    <input class="input1" type="email" id="email" name="email" placeholder="E-mail" />
+    <Button type="subscribe" text="Subscribe" />
+  </div>
   <div>
-    <h2>Contact</h2>
+    <h3>Contact</h3>
     <p>email@kune.dk</p>
     <p>+45 11 22 33 44</p>
     <p>someplace in CPH</p>
     <p>&copy; KUNE 2023</p>
-  </div>
-  <div class="emailsub">
-    <p class="newsletter">Subscribe to our newsletter</p>
-    <input class="input1" type="email" id="email" name="email" placeholder="E-mail" />
-    <Button type="subscribe" text="Subscribe" />
   </div>
 </footer>
 
@@ -23,14 +23,14 @@ import Button from "./Button.astro";
     transition: all 0.3s ease-in-out;
     position: relative;
   }
+
   footer {
-    display: flex;
-    justify-content: space-between;
-    color: #f8e6dc;
-    padding: 2rem;
+    color: var(--primary);
   }
-  h2 {
+
+  h3 {
     padding: 15px;
+    font-family: "Montserrat", sans-serif;
   }
   p {
     padding: 10px;
@@ -50,6 +50,7 @@ import Button from "./Button.astro";
     margin-top: 0%;
     padding: 1rem;
     border-radius: 16px;
+    font-family: "Montserrat", sans-serif;
   }
 
   .emailsub {
@@ -58,7 +59,26 @@ import Button from "./Button.astro";
     grid-template-rows: 1fr 1fr 1fr 1fr;
   }
 
-  .newsletter {
-    font-weight: 700;
+  @media (min-width: 550px) {
+    .emailsub {
+      order: 1;
+    }
+    footer {
+      display: flex;
+      justify-content: space-between;
+
+      padding: 2rem;
+    }
+  }
+  @media (max-width: 550px) {
+    .emailsub {
+      background-image: linear-gradient(#802ced, #f971a9);
+    }
+    footer {
+      margin-bottom: 110px;
+    }
+    div {
+      padding: 20px;
+    }
   }
 </style>
