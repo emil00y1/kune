@@ -3,17 +3,27 @@ import Button from "./Button.astro";
 ---
 
 <footer>
-  <div class="emailsub">
-    <h3 class="newsletter">Subscribe to our newsletter</h3>
-    <input class="input1" type="email" id="email" name="email" placeholder="E-mail" />
-    <Button type="subscribe" text="Subscribe" />
+  <div class="contact">
+    <div class="emailsub cont">
+      <h3 class="newsletter">Subscribe to our newsletter</h3>
+      <input class="input1" type="email" id="email" name="email" placeholder="E-mail" />
+      <Button type="subscribe" text="Subscribe" />
+    </div>
+    <div class="cont">
+      <h3>Contact</h3>
+      <p>email@kune.dk</p>
+      <p>+45 11 22 33 44</p>
+      <p>someplace in CPH</p>
+    </div>
   </div>
-  <div>
-    <h3>Contact</h3>
-    <p>email@kune.dk</p>
-    <p>+45 11 22 33 44</p>
-    <p>someplace in CPH</p>
+  <div class="some">
     <p>&copy; KUNE 2023</p>
+    <div>
+      <a href="#"><img src="img/facebook-svgrepo-com.svg" alt="facebook" /></a>
+      <a href="#"><img src="img/instagram-svgrepo-com.svg" alt="instagram" /></a>
+      <a href="#"><img src="img/tiktok-svgrepo-com.svg" alt="tiktok" /></a>
+      <a href="#"><img src="img/twitter-svgrepo-com.svg" alt="twitter" /></a>
+    </div>
   </div>
 </footer>
 
@@ -59,15 +69,24 @@ import Button from "./Button.astro";
     grid-template-rows: 1fr 1fr 1fr 1fr;
   }
 
+  img {
+    max-width: 40px;
+  }
+
+  .some {
+    display: flex;
+    justify-content: space-between;
+  }
   @media (min-width: 550px) {
     .emailsub {
       order: 1;
     }
     footer {
+      padding: 2rem;
+    }
+    .contact {
       display: flex;
       justify-content: space-between;
-
-      padding: 2rem;
     }
   }
   @media (max-width: 550px) {
@@ -77,7 +96,8 @@ import Button from "./Button.astro";
     footer {
       margin-bottom: 110px;
     }
-    div {
+    .some,
+    .cont {
       padding: 20px;
     }
   }
