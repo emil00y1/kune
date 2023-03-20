@@ -1,10 +1,12 @@
 ---
+const { data } = Astro.props;
+console.log(data);
 ---
 
 <div>
-  <img src="/img/slet-mig.png" alt="artist" />
-  <p>stage name</p>
-  <h3>artist name</h3>
+  <img src={`img/artists/${data.image}`} alt="artist" />
+  <p>{data.location}</p>
+  <h3>{data.artistname}</h3>
 </div>
 
 <style>
@@ -24,7 +26,7 @@
     font-weight: 600;
     color: black;
     text-align: center;
-    padding-left: 12%;
+    /* padding-left: 12%; */
   }
 
   h3 {
