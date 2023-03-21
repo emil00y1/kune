@@ -22,6 +22,11 @@ main img {
   src: url(/fonts/dance.woff2);
 }
 
+@font-face {
+  font-family: Montserrat;
+  src: url(/fonts/Montserrat.woff2);
+}
+
 /* Colors */
 
 :root {

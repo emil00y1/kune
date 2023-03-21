@@ -13,10 +13,6 @@ const { title, id, type, iclass } = Astro.props;
     <meta name="generator" content={Astro.generator} />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap"
-      rel="stylesheet"
-    />
     <title>{title}</title>
   </head>
 
@@ -45,7 +41,7 @@ const { title, id, type, iclass } = Astro.props;
       margin-top: 20%;
       color: black;
     }
-    / @media (min-width: 550px) {
+    @media (min-width: 550px) {
       main.index {
         top: -168px;
       }
