@@ -2,7 +2,7 @@
 import Footer from "../components/Footer.astro";
 import Header from "../components/Header.astro";
 import "../styles/main.css";
-const { title, id, type } = Astro.props;
+const { title, id, type, iclass } = Astro.props;
 ---
 
 <html lang="en">
@@ -19,7 +19,7 @@ const { title, id, type } = Astro.props;
 
   <body>
     <Header />
-    <main>
+    <main class={iclass}>
       <section class={type}>
         <h1 id={id}>{title}</h1>
         <slot name="after-heading" />
@@ -41,6 +41,10 @@ const { title, id, type } = Astro.props;
     .landing h1 {
       margin-top: 20%;
       color: black;
+    }
+
+    main.index {
+      top: -168px;
     }
   </style>
 </html>
