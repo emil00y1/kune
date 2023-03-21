@@ -3,11 +3,8 @@ import Button from "../components/Button.astro";
 import Card from "../components/Card.astro";
 import Main from "../layouts/Main.astro";
 
-// const urlParams = new URLSearchParams(window.location.search);
-// const day = urlParams.get("day");
-
 const data = await fetch(
-  "https://mjaccmeonfywsevhklts.supabase.co/rest/v1/kunedata?image=neq.NULL&day=eq.Thursday&select=artistname,day,location,image",
+  "https://mjaccmeonfywsevhklts.supabase.co/rest/v1/kunedata?image=neq.NULL&select=artistname,day,location,image",
   {
     method: "GET",
     headers: {
@@ -20,11 +17,12 @@ const data = await fetch(
 
 <Main title="LINEUP">
   <div class="buttonNavigation">
-    <Button href="lineup?day=wednesday" type="creampurple" text="wednesday" />
-    <Button href="lineup?day=thursday" type="creampurple" text="thursday" />
-    <Button href="lineup?day=friday" type="creampurple" text="friday" />
-    <Button href="lineup?day=saturday" type="creampurple" text="saturday" />
-    <Button href="lineup?day=sunday" type="creampurple" text="sunday" />
+    <Button href="lineup" type="creampurple" text="All" />
+    <Button type="creampurple" text="Wednesday" />
+    <Button type="creampurple" text="Thursday" />
+    <Button type="creampurple" text="Friday" />
+    <Button type="creampurple" text="Saturday" />
+    <Button type="creampurple" text="Sunday" />
   </div>
 
   <div class="artist_container">
@@ -58,7 +56,32 @@ const data = await fetch(
 </style>
 
 <script>
-  const urlParams = new URLSearchParams(window.location.search);
+  window.addEventListener("load", addPurple);
+
+  function addPurple() {
+    console.log("hello bish");
+    document
+      .querySelector(".buttonNavigation")
+      .firstElementChild.classList.add("purple");
+  }
+
+  const all = document.querySelectorAll(".artist-card");
+
+  const buttons = document.querySelectorAll(".buttonNavigation a");
+  buttons.forEach((btn) => {
+    btn.addEventListener("click", (e) => {
+      buttons.forEach((b) => b.classList.remove("purple"));
+      btn.classList.add("purple");
+      const day = btn.textContent;
+      all.forEach((card) => {
+        card.classList.add("hidden");
+        if (day === card.dataset.day) {
+          card.classList.remove("hidden");
+        }
+      });
+    });
+  });
+  /*  const urlParams = new URLSearchParams(window.location.search);
   const day = urlParams.get("day");
 
   document
@@ -77,5 +100,5 @@ const data = await fetch(
         },
       }
     ).then((res) => res.json());
-  }
+  } */
 </script>
