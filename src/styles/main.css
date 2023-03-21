@@ -72,3 +72,21 @@ main.hide {
     font-size: 60px;
   }
 }
+
+.hidden {
+  display: none;
+}
+
+.purple {
+  background: var(--purple);
+  width: 208px;
+  border-radius: 35px;
+  height: 58px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--primary);
+  font-size: 26px;
+  font-weight: 500;
+  text-transform: uppercase;
+}

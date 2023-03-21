@@ -9,6 +9,12 @@ const { text, type, href } = Astro.props;
     font-family: Montserrat;
     font-weight: 500;
     text-decoration: none;
+    cursor: pointer;
+  }
+
+  a:hover {
+    transform: scale(1.05);
+    transition: ease-in-out 0.15s;
   }
 
   /* darkred button */
@@ -118,3 +124,19 @@ const { text, type, href } = Astro.props;
     }
   }
 </style>
+
+<script>
+  // const urlParams = new URLSearchParams(window.location.search);
+
+  // window.addEventListener("load", clickable);
+
+  // function clickable() {
+  //   console.log("loades");
+  //   document.querySelector("a").addEventListener("mousedown", changeUrl);
+  // }
+
+  // function changeUrl() {
+  //   console.log("det virker");
+  //   urlParams.set("category", "{text}");
+  // }
+</script>
