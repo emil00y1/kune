@@ -43,8 +43,10 @@ const { title, id, type, iclass } = Astro.props;
       color: black;
     }
 
-    main.index {
-      top: -168px;
+    @media (min-width: 550px) {
+      main.index {
+        top: -168px;
+      }
     }
   </style>
 </html>
