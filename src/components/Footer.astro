@@ -24,7 +24,7 @@ import Button from "./Button.astro";
   </div>
   <div class="some">
     <p>&copy; KUNE 2023</p>
-    <div>
+    <div class="media_icons">
       <a href="#"><img src="/img/facebook-svgrepo-com.svg" alt="facebook" /></a>
       <a href="#"
         ><img src="/img/instagram-svgrepo-com.svg" alt="instagram" /></a
@@ -65,6 +65,7 @@ import Button from "./Button.astro";
     border-color: transparent;
   }
   .input1 {
+    border: none;
     margin-top: 0%;
     padding: 1rem;
     border-radius: 16px;
@@ -85,6 +86,12 @@ import Button from "./Button.astro";
     display: flex;
     justify-content: space-between;
   }
+
+  .media_icons {
+    display: flex;
+    gap: 2px;
+  }
+
   @media (min-width: 550px) {
     .emailsub {
       order: 1;
