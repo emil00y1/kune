@@ -3,13 +3,16 @@ import Button from "../components/Button.astro";
 import Card from "../components/Card.astro";
 import Main from "../layouts/Main.astro";
 
-const data = await fetch("https://mjaccmeonfywsevhklts.supabase.co/rest/v1/kunedata?image=neq.NULL&select=artistname,day,location,image", {
-  method: "GET",
-  headers: {
-    apikey:
-      "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im1qYWNjbWVvbmZ5d3NldmhrbHRzIiwicm9sZSI6ImFub24iLCJpYXQiOjE2Nzg3ODg2OTgsImV4cCI6MTk5NDM2NDY5OH0.dwmg0xpH8rIwvdD7VoUqaKiM-Co02FYLlXGsdnc7nhs",
-  },
-}).then((res) => res.json());
+const data = await fetch(
+  "https://mjaccmeonfywsevhklts.supabase.co/rest/v1/kunedata?image=neq.NULL&artistname=neq.Accelerationism&select=artistname,day,location,image",
+  {
+    method: "GET",
+    headers: {
+      apikey:
+        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im1qYWNjbWVvbmZ5d3NldmhrbHRzIiwicm9sZSI6ImFub24iLCJpYXQiOjE2Nzg3ODg2OTgsImV4cCI6MTk5NDM2NDY5OH0.dwmg0xpH8rIwvdD7VoUqaKiM-Co02FYLlXGsdnc7nhs",
+    },
+  }
+).then((res) => res.json());
 ---
 
 <Main title="LINEUP">
@@ -75,7 +78,9 @@ const data = await fetch("https://mjaccmeonfywsevhklts.supabase.co/rest/v1/kuned
 
   function addPurple() {
     console.log("hello bish");
-    document.querySelector(".buttonNavigation").firstElementChild.classList.add("purple");
+    document
+      .querySelector(".buttonNavigation")
+      .firstElementChild.classList.add("purple");
   }
 
   const all = document.querySelectorAll(".artist-card");
