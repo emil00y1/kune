@@ -104,3 +104,11 @@ main.hide {
     font-size: 21px;
   }
 }
+@media (max-width: 450px) {
+  .purple {
+    width: 130px;
+    border-radius: 35px;
+    height: 42px;
+    font-size: 18px;
+  }
+}
