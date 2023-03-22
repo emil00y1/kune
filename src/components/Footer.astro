@@ -6,8 +6,16 @@ import Button from "./Button.astro";
   <div class="contact">
     <div class="emailsub cont">
       <h3 class="newsletter">Subscribe to our newsletter</h3>
-      <input class="input1" type="email" id="email" name="email" placeholder="E-mail" />
-      <Button type="subscribe" text="Subscribe" />
+      <input
+        class="input1"
+        type="email"
+        id="email"
+        name="email"
+        placeholder="E-mail"
+      />
+      <div class="centerButton">
+        <Button type="subscribe" text="Subscribe" />
+      </div>
     </div>
     <div class="cont">
       <h3>Contact</h3>
@@ -18,11 +26,13 @@ import Button from "./Button.astro";
   </div>
   <div class="some">
     <p>&copy; KUNE 2023</p>
-    <div>
-      <a href="#"><img src="img/facebook-svgrepo-com.svg" alt="facebook" /></a>
-      <a href="#"><img src="img/instagram-svgrepo-com.svg" alt="instagram" /></a>
-      <a href="#"><img src="img/tiktok-svgrepo-com.svg" alt="tiktok" /></a>
-      <a href="#"><img src="img/twitter-svgrepo-com.svg" alt="twitter" /></a>
+    <div class="media_icons">
+      <a href="#"><img src="/img/facebook-svgrepo-com.svg" alt="facebook" /></a>
+      <a href="#"
+        ><img src="/img/instagram-svgrepo-com.svg" alt="instagram" /></a
+      >
+      <a href="#"><img src="/img/tiktok-svgrepo-com.svg" alt="tiktok" /></a>
+      <a href="#"><img src="/img/twitter-svgrepo-com.svg" alt="twitter" /></a>
     </div>
   </div>
 </footer>
@@ -46,21 +56,13 @@ import Button from "./Button.astro";
     padding: 10px;
   }
 
-  .input2 {
-    padding: 1rem;
-    padding-left: 0.2rem;
-    padding-right: 0.2rem;
-    border-radius: 30%;
-    color: #f8e6dc;
-    background-color: #8760d4;
-
-    border-color: transparent;
-  }
   .input1 {
+    border: none;
     margin-top: 0%;
-    padding: 1rem;
+    padding: 1rem 1rem 1rem 1rem;
     border-radius: 16px;
     font-family: "Montserrat", sans-serif;
+    font-size: 0.9rem;
   }
 
   .emailsub {
@@ -77,6 +79,13 @@ import Button from "./Button.astro";
     display: flex;
     justify-content: space-between;
   }
+
+  .media_icons {
+    display: grid;
+    gap: 2px;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+
   @media (min-width: 550px) {
     .emailsub {
       order: 1;
@@ -92,6 +101,9 @@ import Button from "./Button.astro";
   @media (max-width: 550px) {
     .emailsub {
       background-image: linear-gradient(#802ced, #f971a9);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
     footer {
       margin-bottom: 110px;
@@ -99,6 +111,15 @@ import Button from "./Button.astro";
     .some,
     .cont {
       padding: 20px;
+    }
+
+    .input1 {
+      width: 225px;
+    }
+
+    .centerButton {
+      display: flex;
+      justify-content: center;
     }
   }
 </style>

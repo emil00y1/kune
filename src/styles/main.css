@@ -22,6 +22,11 @@ main img {
   src: url(/fonts/dance.woff2);
 }
 
+@font-face {
+  font-family: Montserrat;
+  src: url(/fonts/Montserrat.woff2);
+}
+
 /* Colors */
 
 :root {
@@ -70,5 +75,40 @@ main.hide {
 @media (max-width: 800px) {
   h1 {
     font-size: 60px;
+  }
+}
+
+.hidden {
+  display: none;
+}
+
+.purple {
+  background: var(--purple);
+  width: 208px;
+  border-radius: 35px;
+  height: 58px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--primary);
+  font-size: 26px;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+@media (max-width: 550px) {
+  .purple {
+    width: 166px;
+    border-radius: 35px;
+    height: 44px;
+    font-size: 21px;
+  }
+}
+@media (max-width: 450px) {
+  .purple {
+    width: 130px;
+    border-radius: 35px;
+    height: 42px;
+    font-size: 18px;
   }
 }

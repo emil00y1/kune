@@ -9,6 +9,12 @@ const { text, type, href } = Astro.props;
     font-family: Montserrat;
     font-weight: 500;
     text-decoration: none;
+    cursor: pointer;
+  }
+
+  a:hover {
+    transform: scale(1.05);
+    transition: ease-in-out 0.15s;
   }
 
   /* darkred button */
@@ -42,7 +48,8 @@ const { text, type, href } = Astro.props;
   }
 
   /* purple button */
-  .purple {
+  .purple,
+  .creampurple:hover {
     background: var(--purple);
     width: 208px;
     border-radius: 35px;
@@ -116,5 +123,33 @@ const { text, type, href } = Astro.props;
       font-size: 18px;
       font-weight: 500;
     }
+
+    .darkred,
+    .creamred:hover,
+    .creamred,
+    .purple,
+    .creampurple,
+    .creampurple:hover {
+      width: 166px;
+      border-radius: 35px;
+      height: 44px;
+      font-size: 21px;
+    }
+  }
+
+  @media (max-width: 450px) {
+    .darkred,
+    .creamred:hover,
+    .creamred,
+    .purple,
+    .creampurple,
+    .creampurple:hover {
+      width: 130px;
+      border-radius: 35px;
+      height: 42px;
+      font-size: 18px;
+    }
   }
 </style>
+
+<script></script>
