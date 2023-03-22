@@ -95,3 +95,12 @@ main.hide {
   font-weight: 500;
   text-transform: uppercase;
 }
+
+@media (max-width: 550px) {
+  .purple {
+    width: 166px;
+    border-radius: 35px;
+    height: 44px;
+    font-size: 21px;
+  }
+}
