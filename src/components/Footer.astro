@@ -6,13 +6,7 @@ import Button from "./Button.astro";
   <div class="contact">
     <div class="emailsub cont">
       <h3 class="newsletter">Subscribe to our newsletter</h3>
-      <input
-        class="input1"
-        type="email"
-        id="email"
-        name="email"
-        placeholder="E-mail"
-      />
+      <input class="input1" type="email" id="email" name="email" placeholder="E-mail" />
       <Button type="subscribe" text="Subscribe" />
     </div>
     <div class="cont">
@@ -26,9 +20,7 @@ import Button from "./Button.astro";
     <p>&copy; KUNE 2023</p>
     <div class="media_icons">
       <a href="#"><img src="/img/facebook-svgrepo-com.svg" alt="facebook" /></a>
-      <a href="#"
-        ><img src="/img/instagram-svgrepo-com.svg" alt="instagram" /></a
-      >
+      <a href="#"><img src="/img/instagram-svgrepo-com.svg" alt="instagram" /></a>
       <a href="#"><img src="/img/tiktok-svgrepo-com.svg" alt="tiktok" /></a>
       <a href="#"><img src="/img/twitter-svgrepo-com.svg" alt="twitter" /></a>
     </div>
@@ -78,8 +70,9 @@ import Button from "./Button.astro";
   }
 
   .media_icons {
-    display: flex;
+    display: grid;
     gap: 2px;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
   }
 
   @media (min-width: 550px) {
